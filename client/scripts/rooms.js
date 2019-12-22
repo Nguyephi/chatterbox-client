@@ -1,4 +1,5 @@
 var Rooms = {
+
   // var messages = parse.readAll();
   // //look thru messages for a list of all unique rooms
   // //default of nothing
