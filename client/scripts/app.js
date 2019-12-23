@@ -23,7 +23,7 @@ var App = {
       console.log(data);
 
       Messages.getMessages(data.results);
-      RoomsView.getRoomnames(data.results);
+      RoomsView.getRoomnames(data.results, RoomsView.render);
 
       callback();
     });

@@ -8,17 +8,21 @@ var FormView = {
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
+
+
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    var messageInput = $('#message').val()
+    var messageInput = $('#message').val();
     var message = {
       username: App.username,
       text: messageInput,
-      roomname: App.roomname
+      roomname: $( "#rooms:selected" ).val() //need to collect what is active on submit
     };
+    console.log(message.roomname);
 
     Parse.create(message);
+    console.log(Parse.create(message));
     // , function(data) {
     //   _.extend(message, data);
     //   console.log(message);

@@ -12,8 +12,8 @@ var MessagesView = {
   renderMessage: function() {
     _.each(Messages.messages, function(item) {
       var $message = MessageView.render(item);
-      MessagesView.$chats.append($message)
-    })
+      MessagesView.$chats.append($message);
+    });
   }
 
 };

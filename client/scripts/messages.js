@@ -5,7 +5,7 @@ var Messages = {
 
   getMessages: function (data) {
     for (var i = 0; i < data.length; i++) {
-        Messages.messages.push(data[i]);
+      Messages.messages.push(data[i]);
     }
     MessagesView.renderMessage();
   },
