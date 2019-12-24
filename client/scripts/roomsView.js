@@ -6,7 +6,7 @@ var RoomsView = {
   selectedRoom: '',
 
   initialize: function() {
-    RoomsView.$selectedRoom.on('change', RoomsView.handleSelect)
+    RoomsView.$selectedRoom.on('change', RoomsView.handleSelect);
   },
 
   render: function() {
@@ -17,6 +17,7 @@ var RoomsView = {
   },
 
   handleSelect: function(e) {
+    console.log(e.target);
     e.target.value ? RoomsView.selectedRoom = e.target.value : null;
   },
 
@@ -29,7 +30,6 @@ var RoomsView = {
         }
       }
     });
-    RoomsView.selectedRoom = RoomsView.roomnames[0]
     callback();
   },
 
