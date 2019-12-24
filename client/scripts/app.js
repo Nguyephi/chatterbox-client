@@ -22,7 +22,7 @@ var App = {
       // examine the response from the server request
       console.log(data);
 
-      Messages.getMessages(data.results);
+      Messages.getMessages(data.results, MessagesView.renderMessage);
       RoomsView.getRoomnames(data.results, RoomsView.render);
 
       callback();
