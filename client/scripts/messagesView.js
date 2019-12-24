@@ -17,11 +17,11 @@ var MessagesView = {
   },
 
   addMessage: function (message) {
-    console.log(message)
+    console.log(message);
     // make message a dom node duhhhh
-    MessagesView.$chats.prepend(MessageView.render(message))
+    MessagesView.$chats.prepend(MessageView.render(message));
     // take out input value
-    $('#message').val('')
+    $('#message').val('');
   }
 
 };
