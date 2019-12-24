@@ -3,19 +3,16 @@
 var Messages = {
   messages: [],
 
-  getMessages: function (data) {
+  getMessages: function (data, cb = () => {}) {
     for (var i = 0; i < data.length; i++) {
       Messages.messages.push(data[i]);
     }
-    MessagesView.renderMessage();
+    cb()
   },
 
-  add: function(message) {
+  add: function(message, cb = () => {}) {
     Messages.messages.unshift(Messages.checkMessage(message));
-    MessagesView.renderMessage();
-
-    // Messages.getMessages(Messages.messages);: this broke the website. probably because it's trying to rewrite Messages.messages with the data from Messages.messages...
-
+    cb(message)
   },
 
   checkMessage: function(message) { ///This is checking the message to make sure it has everything it needs b/c of _.template being picky

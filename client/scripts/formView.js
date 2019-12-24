@@ -19,20 +19,8 @@ var FormView = {
       text: messageInput,
       roomname: RoomsView.selectedRoom //need to collect what is active on submit
     };
-    console.log(message.roomname);
 
     Parse.create(message);
-    console.log(Parse.create(message));
-    // , function(data) {
-    //   _.extend(message, data);
-    //   console.log(message);
-
-    // });
-
-    Messages.add(message);
-    MessagesView.renderMessage();
-
-
   },
 
   setStatus: function(active) {

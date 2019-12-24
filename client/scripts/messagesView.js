@@ -14,6 +14,14 @@ var MessagesView = {
       var $message = MessageView.render(item);
       MessagesView.$chats.append($message);
     });
+  },
+
+  addMessage: function (message) {
+    console.log(message)
+    // make message a dom node duhhhh
+    MessagesView.$chats.prepend(MessageView.render(message))
+    // take out input value
+    $('#message').val('')
   }
 
 };
