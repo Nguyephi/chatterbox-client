@@ -17,7 +17,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: messageInput,
-      roomname: $( '#rooms:selected' ).val() //need to collect what is active on submit
+      roomname: RoomsView.selectedRoom //need to collect what is active on submit
     };
     console.log(message.roomname);
 
@@ -34,17 +34,6 @@ var FormView = {
 
 
   },
-
-
-
-
-
-
-
-
-
-
-
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
