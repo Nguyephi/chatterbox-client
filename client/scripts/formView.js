@@ -20,7 +20,13 @@ var FormView = {
       roomname: RoomsView.selectedRoom //need to collect what is active on submit
     };
 
-    Parse.create(message);
+    if (message.roomname === '') {
+      alert('Please select or add a room before posting a message. ')
+    } else if (message.text=== '') {
+      alert('Please add message before posting')
+    } else {
+      Parse.create(message);
+    }
   },
 
   setStatus: function(active) {

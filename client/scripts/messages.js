@@ -1,13 +1,25 @@
-// console.log(parse.messages)
-
 var Messages = {
   messages: [],
+  filteredMessages: [],
 
   getMessages: function (data, cb = () => {}) {
     for (var i = 0; i < data.length; i++) {
-      Messages.messages.push(data[i]);
+      Messages.messages.push(Messages.checkMessage(data[i]));
     }
-    cb()
+    cb(Messages.messages)
+  },
+
+  getMessagesByRoom: function(room, cb = () => {}) {
+    var filteredMessages = [];
+    if (room) {
+      _.filter(Messages.messages, function(message) {
+        if (message.roomname === room) {
+          filteredMessages.push(message);
+        }
+      })
+      Messages.filteredMessages = filteredMessages.slice()
+      cb(Messages.filteredMessages)
+    }
   },
 
   add: function(message, cb = () => {}) {
